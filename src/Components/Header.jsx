@@ -62,6 +62,7 @@ const Header = () => {
     transition={{
         duration:1.5
     }}
+    onClick={{}}
     className='flex flex-row items-center text-gray-400 cursor-pointer'>
         <SocialIcon 
         className='cursor-pointer hover:animate-bounce'

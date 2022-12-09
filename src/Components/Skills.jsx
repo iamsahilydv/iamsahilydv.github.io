@@ -96,7 +96,7 @@ const Skills = () => {
                 <Skill 
                 key={el.id}
                 logo={el.logo}
-                // leftDirection={el.leftDirection}
+                leftDirection={el.leftDirection}
                 
                 />
                 // <h3>{el.leftDirection}</h3>
