@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.29f1aae5.css",
+    "main.js": "/static/js/main.73c1a50d.js",
+    "static/js/787.2fa7b46f.chunk.js": "/static/js/787.2fa7b46f.chunk.js",
+    "static/media/SugarCosmatics.png": "/static/media/SugarCosmatics.27825625da02eb9b4b87.png",
+    "static/media/Proflow.png": "/static/media/Proflow.67b591b773d185cfc97c.png",
+    "static/media/Freshwork-image.png": "/static/media/Freshwork-image.a30db4ec9aca9279aef1.png",
+    "static/media/Sahil-Resume.pdf": "/static/media/Sahil-Resume.1ec4d5287818dfce107b.pdf",
+    "static/media/profile-image.JPG": "/static/media/profile-image.ccd9bd3d8f19e87affaa.JPG",
+    "static/media/Avatar.jpg": "/static/media/Avatar.13c22a012a4033bb3a7a.jpg",
+    "static/media/_interop_require_wildcard.cjs": "/static/media/_interop_require_wildcard.c54f7b5a0af7468af809.cjs",
+    "index.html": "/index.html",
+    "static/media/_interop_require_default.cjs": "/static/media/_interop_require_default.9765e935c5a6e5dec7f6.cjs",
+    "main.29f1aae5.css.map": "/static/css/main.29f1aae5.css.map",
+    "main.73c1a50d.js.map": "/static/js/main.73c1a50d.js.map",
+    "787.2fa7b46f.chunk.js.map": "/static/js/787.2fa7b46f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.29f1aae5.css",
+    "static/js/main.73c1a50d.js"
+  ]
+}
