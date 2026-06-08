@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.2eec99a0.css",
-    "main.js": "/static/js/main.2cc011f0.js",
+    "main.css": "/static/css/main.2eb2a646.css",
+    "main.js": "/static/js/main.be9ceb1b.js",
     "static/js/453.8b6682a1.chunk.js": "/static/js/453.8b6682a1.chunk.js",
     "static/media/onestep_ecommerce_3d.png": "/static/media/onestep_ecommerce_3d.daaf8f5bf70957ee5cb9.png",
     "static/media/linux_infrastructure_3d.png": "/static/media/linux_infrastructure_3d.2f8b9bafda23a57e74d6.png",
@@ -9,12 +9,12 @@
     "static/media/profile-image.JPG": "/static/media/profile-image.ccd9bd3d8f19e87affaa.JPG",
     "static/media/Avatar.jpg": "/static/media/Avatar.13c22a012a4033bb3a7a.jpg",
     "index.html": "/index.html",
-    "main.2eec99a0.css.map": "/static/css/main.2eec99a0.css.map",
-    "main.2cc011f0.js.map": "/static/js/main.2cc011f0.js.map",
+    "main.2eb2a646.css.map": "/static/css/main.2eb2a646.css.map",
+    "main.be9ceb1b.js.map": "/static/js/main.be9ceb1b.js.map",
     "453.8b6682a1.chunk.js.map": "/static/js/453.8b6682a1.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2eec99a0.css",
-    "static/js/main.2cc011f0.js"
+    "static/css/main.2eb2a646.css",
+    "static/js/main.be9ceb1b.js"
   ]
 }
