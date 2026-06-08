@@ -1,55 +1,70 @@
 import React from "react";
 import { DiGithubBadge } from "react-icons/di";
-import { MdTransitEnterexit } from "react-icons/md";
+import { FiExternalLink } from "react-icons/fi";
 
-const Project = ({ image, description, name, end, deploy, github }) => {
+const Project = ({ image, description, name, projectType, skills, deploy, github }) => {
   return (
-    <div
-      className=" ProjectsDiv rounded-lg  h-[100%] w-[100%] box-border m-auto pt-5 pb-3 pl-5 pr-5"
-      onClick={() => {
-        window.open(deploy, "_blank", "noreferrer");
-      }}
-      style={{
-        boxShadow:
-          "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px",
-      }}
-    >
-      <div className="flex h-[40%]  w-[100%] rounded-lg ">
-        <img className="h-[100%]  w-[100%] rounded-lg " src={image} alt="" />
-      </div>
-      <div>
-        <h2 className="text-left text-[22px]  w-[100%] p-3  ">{name}</h2>
-        <div>
-        <p className="text-gray-400 pl-3 text-[12px] sm:text-[16px] text-left">
-        <span className="text-white font-bold">About Site:</span> {description}
-      </p>
-      <p className="text-gray-400 pl-3 mt-3 text-[12px] sm:text-[16px] text-left">
-        {end}
-      </p>
-      <div className="flex justify-around">
-        <button
-          className="profileButton  flex gap-10 mt-3 self-center text-xl sm:text-4xl"
-          onClick={() => {
-            window.open(github, "_blank", "noreferrer");
-          }}
-        >
-          {<DiGithubBadge />}
-        </button>
-        <button
-          className="profileButton flex items-center h-fit mt-3"
-          onClick={() => {
-            window.open(deploy, "_blank", "noreferrer");
-          }}
-        >
-          <p className="text-[12px] sm:text-[16px]">Visit</p>
-          <span className="text-xl sm:text-4xl">
-            <MdTransitEnterexit />
-          </span>
-        </button>
-      </div>
+    <div className="flex flex-col h-full w-full">
+      {/* Aspect Ratio Image Container */}
+      <div className="w-full aspect-video overflow-hidden rounded-t-2xl relative group-hover:scale-[1.01] transition-transform duration-500">
+        <img 
+          className="h-full w-full object-cover transition-transform duration-700 hover:scale-110" 
+          src={image} 
+          alt={name} 
+        />
+        <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
+          <p className="text-[10px] sm:text-xs text-[#F7AB0A] font-semibold tracking-wider uppercase">
+            {projectType}
+          </p>
         </div>
       </div>
       
+      {/* Content Area */}
+      <div className="flex flex-col flex-grow p-5 sm:p-6 text-left justify-between">
+        <div className="space-y-3">
+          <h4 className="text-lg sm:text-xl font-bold text-white tracking-wide">
+            {name}
+          </h4>
+          
+          <p className="text-gray-300 text-xs sm:text-sm leading-relaxed line-clamp-4">
+            {description}
+          </p>
+          
+          <div className="space-y-1 pt-1">
+            <p className="text-[10px] sm:text-xs uppercase text-gray-500 tracking-wider font-bold">
+              Tech Stack
+            </p>
+            <p className="text-[#F7AB0A] text-xs sm:text-sm font-semibold tracking-wide leading-relaxed">
+              {skills}
+            </p>
+          </div>
+        </div>
+
+        {/* Dynamic Buttons */}
+        <div className="flex items-center gap-4 pt-6 border-t border-white/5 mt-6 w-full">
+          <button
+            className="flex-1 flex items-center justify-center gap-2 px-4 py-2 border border-gray-700 hover:border-white text-gray-300 hover:text-white rounded-xl text-xs sm:text-sm transition-all"
+            onClick={(e) => {
+              e.stopPropagation();
+              window.open(github, "_blank", "noreferrer");
+            }}
+          >
+            <DiGithubBadge className="text-lg sm:text-xl" />
+            <span>Code</span>
+          </button>
+          
+          <button
+            className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-[#F7AB0A] hover:bg-[#F7AB0A]/90 text-black font-semibold rounded-xl text-xs sm:text-sm transition-all shadow-[0_4px_20px_rgba(247,171,10,0.2)] hover:shadow-[0_4px_25px_rgba(247,171,10,0.4)]"
+            onClick={(e) => {
+              e.stopPropagation();
+              window.open(deploy, "_blank", "noreferrer");
+            }}
+          >
+            <FiExternalLink className="text-sm sm:text-base" />
+            <span>Launch</span>
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

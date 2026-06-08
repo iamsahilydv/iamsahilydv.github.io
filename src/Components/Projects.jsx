@@ -1,113 +1,91 @@
 import React from "react";
 import Project from "./Project";
-import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
-import { motion } from "framer-motion";
-import project1img from "../Images/Freshwork-image.png";
-import project2img from "../Images/Proflow.png";
-import project3img from "../Images/SugarCosmatics.png";
+import { motion, useScroll, useTransform } from "framer-motion";
+import onestepImg from "../Images/onestep_ecommerce_3d.png";
+import linuxImg from "../Images/linux_infrastructure_3d.png";
+import saeImg from "../Images/sae_member_portal_3d.png";
+import TiltCard from "./TiltCard";
 
 const Projects = () => {
+  const { scrollY } = useScroll();
+  const yVal = useTransform(scrollY, [1000, 3500], [-100, 100]);
+
   const ProjectsBuild = [
     {
       id: 1,
-      img1: project1img,
-      img2: "",
-      url: "",
-      name: "Fresh Work",
-      duration: "3 Days",
+      image: onestepImg,
+      name: "OneStepIndia — MLM E-Commerce",
+      duration: "Active Production",
       description:
-        "Freshworks provides cloud-based software products to help businesses manage customer engagement and support operations.",
-      projectType: "Group Onboarding Presentation Project by 2 Members",
-      skills: "HTML, CSS, JS, RevealJS",
-      githubLink: "https://github.com/iamsahilydv/tse_unit-2_project",
-      deployLink: "https://freshwork.netlify.app",
+        "Designed and built a complete MLM e-commerce platform with binary referral logic and automated commission distribution engine. Implemented secure authentication, wallet management, order processing, and administrative dashboards.",
+      projectType: "Production Platform",
+      skills: "Next.js, Node.js, PostgreSQL, Prisma, AWS S3, Cloudinary, Nginx, Ubuntu",
+      githubLink: "https://github.com/iamsahilydv",
+      deployLink: "https://github.com/iamsahilydv",
     },
     {
       id: 2,
-      img1: project2img,
-      img2: "",
-      url: "",
-      name: "Proflow (Clone of Wrike.com)",
-      duration: " 4 Days",
+      image: linuxImg,
+      name: "Production Home Lab — DevOps",
+      duration: "Ongoing",
       description:
-        "Wrike.com is a cloud-based project management and collaboration software.",
-      projectType: "Group Project by 4 members",
-      skills: "React, ChakrUI, Redux,",
-      githubLink: "https://github.com/iamsahilydv/Wrike-Clone",
-      deployLink: "https://proflow.netlify.app",
+        "Built and actively maintains a 24/7 bare-metal Ubuntu server hosting the OneStepIndia full-stack system. Configured Docker Compose service isolation, Nginx reverse proxy with subdomains, and automated GitHub Actions + Jenkins CI/CD pipelines.",
+      projectType: "Infrastructure Lab",
+      skills: "Ubuntu Server, Docker, Nginx, PostgreSQL, GitHub Actions, Jenkins, SSL, SSH Hardening",
+      githubLink: "https://github.com/iamsahilydv",
+      deployLink: "https://github.com/iamsahilydv",
     },
     {
       id: 3,
-      img1: project3img,
-      img2: "",
-      url: "",
-      name: "Clone of Sugar Cosmatics",
-      duration: "4 Days",
+      image: saeImg,
+      name: "SAEINDIA Member Portal",
+      duration: "Internship Project",
       description:
-        "Sugar Cosmetics Clone, where you can shop for beauty products for women, like eyeliners, brushes etc.",
-      projectType: "Group Project by 4 members",
-      skills: "HTML, CSS, JS",
-      githubLink: "https://github.com/iamsahilydv/SugarCosmatics",
-      deployLink: "https://sugarcosmaticsmasai.netlify.app",
+        "Developed a comprehensive member portal serving 1,000+ active members for membership management, event registration, and administrative workflows. Built a reusable UI component library and integrated secure payment flows.",
+      projectType: "Enterprise Portal",
+      skills: "Next.js, TypeScript, Tailwind CSS, Node.js, Express, REST APIs, Payment Gateways",
+      githubLink: "https://github.com/iamsahilydv",
+      deployLink: "https://github.com/iamsahilydv",
     },
-    // {
-    //   id: 4,
-    //   img1: "",
-    //   img2: "",
-    //   url: "",
-    //   name: "",
-    //   duration: "4 Days",
-    //   projectType: "Group Project",
-    //   skills: [],
-    // },
   ];
+
   return (
     <motion.div
-      className="h-screen mt-28 lg:mt-0  mx-auto flex flex-col relative text-center justify-evenly md:text-left items-center max-w-7xl px-10 "
+      className="min-h-screen w-full flex flex-col justify-center items-center relative text-center max-w-6xl px-4 sm:px-10 mx-auto pt-24 pb-12 overflow-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 1.5 }}
     >
-      {/* <img src={project1Img} alt="" /> */}
-      <h3 className="absolute top-16 uppercase tracking-[24px] text-lg md:text-2xl text-gray-500 animate-pulse m-auto ">
+      <motion.div
+        style={{ y: yVal }}
+        className="absolute inset-0 flex items-center justify-center select-none pointer-events-none -z-10 text-[18vw] font-black text-white/[0.015] uppercase tracking-[1rem] sm:tracking-[2rem] leading-none"
+      >
+        projects
+      </motion.div>
+
+      <h3 className="absolute top-6 uppercase tracking-[16px] sm:tracking-[24px] text-gray-500 text-base sm:text-lg md:text-2xl animate-pulse w-full text-center">
         Projects
       </h3>
-      {/* <div className="text-md md:text-4xl font-extrabold tracking-widest md:tracking-[16px]">
-        To Be Update Soon...
-      </div> */}
-      {/* <div className="flex gap-10 pt-10 pb-10 overflow-x-scroll border border-green-500 h-[60vh] w-[60vw]   ">
-        <div className="border border-red-400 w-14 h-[100%] justify-evenly ">
-          <div className=" arrow text-6xl border border-cyan-400 h-[100%] text-center pt-[20vh] ">
-            <FiArrowLeft className="border border-red-900 align-middle   w-[100%] " />
-          </div>
-        </div>
-        {ProjectsBuild && ProjectsBuild.map((el) => <Project />)}
-        <div className="border border-red-400 w-14 h-[100%] justify-evenly ">
-          <div className=" arrow text-6xl border border-cyan-400 h-[100%] text-center pt-[20vh] ">
-            <FiArrowRight className="border border-red-900 align-middle   w-[100%] " />
-          </div>
-        </div>
-      </div> */}
-      {/* <div className="ProjectsMainDiv w-[80%] h-[70vh] mt-[15vh] flex gap-10 ">
-        <Project />
-        <Project />
-        <Project />
-      </div> */}
-      <div className=" h-[85%] w-full md:w-[95%]  flex flex-col lg:flex-row gap-10 md:gap-5 mt-40 lg:mt-32">
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full mt-16 px-2">
         {ProjectsBuild &&
           ProjectsBuild.map((el) => (
-            <>
-              {/* {console.log(el)} */}
+            <TiltCard
+              key={el.id}
+              className="rounded-2xl glass-card border border-white/5 shadow-xl p-0 flex flex-col h-full preserve-3d"
+              maxTilt={8}
+              scale={1.02}
+            >
               <Project
-                key={el.id}
-                image={el.img1}
+                image={el.image}
                 name={el.name}
                 description={el.description}
-                end={`${el.projectType} created in ${el.duration} by using ${el.skills}`}
+                projectType={el.projectType}
+                skills={el.skills}
                 deploy={el.deployLink}
                 github={el.githubLink}
               />
-            </>
+            </TiltCard>
           ))}
       </div>
     </motion.div>

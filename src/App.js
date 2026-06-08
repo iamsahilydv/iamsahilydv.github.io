@@ -1,62 +1,40 @@
 import Header from "./Components/Header";
 import Profile from "./Components/Profile";
 import About from "./Components/About";
-import WorkExperience from "./Components/WorkExperience";
 import Skills from "./Components/Skills";
 import Project from "./Components/Projects";
 import Connect from "./Components/Connect";
+import ParticleCanvas from "./Components/ParticleCanvas";
 
 function App() {
-  // window.addEventListener("scroll",()=>{
-  //   let header = document.querySelector("#header")
-  //   // if(window.scrollY>"40px"){
-  //   //   console.log("hi")
-  //   // }
-  //   header.classList.toggle("none",window.scrollY > 0)
-  // })
-  // window.addEventListener("scroll",()=>{
-  //   if(window.scrollY === 0){
-  //     console.log("hi")
-  //   }
-  // })
-  const fun = () => {
-    let header = document.querySelector("#header");
-    header.classList.toggle("none");
-  };
-
-  const scrollFun = () => {
-    console.log(window.scrollY);
-  };
-  let main = document.getElementById("mainDiv");
-  // main.addEventListener("scroll", scrollFun());
   return (
     <div
       id="mainDiv"
-      className="bg-[rgb(36,36,36)] text-white h-screen overflow-scroll scroll-smooth z-0"
+      className="bg-transparent text-white min-h-screen w-full overflow-x-hidden scroll-smooth z-0 relative"
     >
-      <section id="header" className=" sticky top-0 bg-[rgb(36,36,36)] z-20 ">
+      <ParticleCanvas />
+      
+      <section id="header" className="sticky top-0 bg-[rgb(20,20,20)]/50 backdrop-blur-lg border-b border-white/5 z-40">
         <Header />
       </section>
-      <section id="profile" className="">
+      
+      <section id="profile" className="min-h-screen flex items-center justify-center relative">
         <Profile />
       </section>
 
-      <section id="about" className="">
+      <section id="about" className="min-h-screen flex items-center justify-center relative py-20">
         <About />
       </section>
 
-      {/* <section id="experience" className="">
-        <WorkExperience />
-      </section> */}
-
-      <section id="skills" className=" h-fit">
+      <section id="skills" className="min-h-screen flex items-center justify-center relative py-20">
         <Skills />
       </section>
 
-      <section id="projects" className="">
+      <section id="projects" className="min-h-screen flex items-center justify-center relative py-20">
         <Project />
       </section>
-      <section id="connect">
+      
+      <section id="connect" className="min-h-screen flex items-center justify-center relative py-20">
         <Connect />
       </section>
     </div>

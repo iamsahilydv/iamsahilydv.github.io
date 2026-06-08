@@ -1,39 +1,22 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-// type Props = {
-//   logo: any;
-//   leftDirection: boolean;
-// };
-
-const Skill = ( {logo,name, leftDirection} ) => {
+const Skill = ({ logo, name }) => {
   return (
-    <div className="group relative flex cursor-pointer mb-3">
-      <motion.div
-        initial={{
-          y: leftDirection ? -200 : 200,
-          opacity: 0,
-        }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{
-          duration: 1.5,
-        }}
-        viewport={{once: true}}
-        className="text-[60px] md:text-[85px] m-auto  rounded-full h-16 w-16  md:h-24 md:w-24 justify-center object-cover items-center   "
-      >
-        <h1 className="text-center text-gray-300 mb-2 ">{logo}</h1>
-        <p className="text-[12px] md:text-[14px] text-center text-gray-500 ">{name}</p>
-      </motion.div>
-      {/* <div className="">
-        <div>
-
-        </div>
-      </div> */}
-      {/* <h3>{logo}</h3> */}
-    </div>
+    <motion.div
+      initial={{ opacity: 0, scale: 0.85 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 0.4 }}
+      whileHover={{ y: -6, scale: 1.05 }}
+      className="flex flex-col items-center justify-center p-4 rounded-2xl glass-card w-28 h-28 sm:w-32 sm:h-32 border border-white/5 hover:border-[#F7AB0A]/40 transition-all cursor-pointer group shadow-lg"
+    >
+      <div className="text-3xl sm:text-4xl text-gray-400 group-hover:text-[#F7AB0A] transition-colors duration-300">
+        {logo}
+      </div>
+      <p className="text-[10px] sm:text-xs text-center text-gray-400 group-hover:text-white transition-colors duration-300 tracking-wide mt-2 font-semibold">
+        {name}
+      </p>
+    </motion.div>
   );
 };
 
