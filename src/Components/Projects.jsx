@@ -21,7 +21,8 @@ const Projects = () => {
       projectType: "Production Platform",
       skills: "Next.js, Node.js, PostgreSQL, Prisma, AWS S3, Cloudinary, Nginx, Ubuntu",
       githubLink: "https://github.com/iamsahilydv",
-      deployLink: "https://github.com/iamsahilydv",
+      deployLink: "https://onestepindia.in",
+      isPrivate: true,
     },
     {
       id: 2,
@@ -32,8 +33,9 @@ const Projects = () => {
         "Built and actively maintains a 24/7 bare-metal Ubuntu server hosting the OneStepIndia full-stack system. Configured Docker Compose service isolation, Nginx reverse proxy with subdomains, and automated GitHub Actions + Jenkins CI/CD pipelines.",
       projectType: "Infrastructure Lab",
       skills: "Ubuntu Server, Docker, Nginx, PostgreSQL, GitHub Actions, Jenkins, SSL, SSH Hardening",
-      githubLink: "https://github.com/iamsahilydv",
-      deployLink: "https://github.com/iamsahilydv",
+      githubLink: "https://github.com/iamsahilydv/homelab",
+      deployLink: "#",
+      isPrivate: true,
     },
     {
       id: 3,
@@ -45,7 +47,8 @@ const Projects = () => {
       projectType: "Enterprise Portal",
       skills: "Next.js, TypeScript, Tailwind CSS, Node.js, Express, REST APIs, Payment Gateways",
       githubLink: "https://github.com/iamsahilydv",
-      deployLink: "https://github.com/iamsahilydv",
+      deployLink: "https://saeiss.org",
+      isPrivate: true,
     },
   ];
 
@@ -84,6 +87,7 @@ const Projects = () => {
                 skills={el.skills}
                 deploy={el.deployLink}
                 github={el.githubLink}
+                isPrivate={el.isPrivate}
               />
             </TiltCard>
           ))}

@@ -2,7 +2,9 @@ import React from "react";
 import { DiGithubBadge } from "react-icons/di";
 import { FiExternalLink } from "react-icons/fi";
 
-const Project = ({ image, description, name, projectType, skills, deploy, github }) => {
+const Project = ({ image, description, name, projectType, skills, deploy, github, isPrivate }) => {
+  const showDeploy = deploy && deploy !== "#";
+
   return (
     <div className="flex flex-col h-full w-full">
       {/* Aspect Ratio Image Container */}
@@ -42,27 +44,36 @@ const Project = ({ image, description, name, projectType, skills, deploy, github
 
         {/* Dynamic Buttons */}
         <div className="flex items-center gap-4 pt-6 border-t border-white/5 mt-6 w-full">
-          <button
-            className="flex-1 flex items-center justify-center gap-2 px-4 py-2 border border-gray-700 hover:border-white text-gray-300 hover:text-white rounded-xl text-xs sm:text-sm transition-all"
-            onClick={(e) => {
-              e.stopPropagation();
-              window.open(github, "_blank", "noreferrer");
-            }}
-          >
-            <DiGithubBadge className="text-lg sm:text-xl" />
-            <span>Code</span>
-          </button>
+          {isPrivate ? (
+            <div className="flex-1 flex items-center justify-center gap-2 px-4 py-2 border border-gray-800 text-gray-500 rounded-xl text-xs sm:text-sm cursor-not-allowed select-none bg-gray-900/10">
+              <DiGithubBadge className="text-lg sm:text-xl opacity-30" />
+              <span>Private Code</span>
+            </div>
+          ) : (
+            <button
+              className="flex-1 flex items-center justify-center gap-2 px-4 py-2 border border-gray-700 hover:border-white text-gray-300 hover:text-white rounded-xl text-xs sm:text-sm transition-all"
+              onClick={(e) => {
+                e.stopPropagation();
+                window.open(github, "_blank", "noreferrer");
+              }}
+            >
+              <DiGithubBadge className="text-lg sm:text-xl" />
+              <span>Code</span>
+            </button>
+          )}
           
-          <button
-            className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-[#F7AB0A] hover:bg-[#F7AB0A]/90 text-black font-semibold rounded-xl text-xs sm:text-sm transition-all shadow-[0_4px_20px_rgba(247,171,10,0.2)] hover:shadow-[0_4px_25px_rgba(247,171,10,0.4)]"
-            onClick={(e) => {
-              e.stopPropagation();
-              window.open(deploy, "_blank", "noreferrer");
-            }}
-          >
-            <FiExternalLink className="text-sm sm:text-base" />
-            <span>Launch</span>
-          </button>
+          {showDeploy && (
+            <button
+              className="flex-1 flex items-center justify-center gap-2 px-4 py-2 bg-[#F7AB0A] hover:bg-[#F7AB0A]/90 text-black font-semibold rounded-xl text-xs sm:text-sm transition-all shadow-[0_4px_20px_rgba(247,171,10,0.2)] hover:shadow-[0_4px_25px_rgba(247,171,10,0.4)]"
+              onClick={(e) => {
+                e.stopPropagation();
+                window.open(deploy, "_blank", "noreferrer");
+              }}
+            >
+              <FiExternalLink className="text-sm sm:text-base" />
+              <span>Launch</span>
+            </button>
+          )}
         </div>
       </div>
     </div>
